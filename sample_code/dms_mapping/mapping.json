@@ -1,0 +1,89 @@
+{
+  "rules": [
+    {
+      "rule-type": "selection",
+      "rule-id": "1",
+      "rule-name": "RuleName 1",
+      "object-locator": {
+        "schema-name": "Testdb",
+        "table-name": "project_detail"
+      },
+      "rule-action": "include"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "2",
+      "rule-name": "RuleName 2",
+      "rule-action": "rename",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "Testdb",
+        "table-name": "project_detail"
+      },
+      "value": "infomation"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "3",
+      "rule-name": "RuleName 3",
+      "rule-action": "rename",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "Testdb",
+        "table-name": "project_detail",
+        "column-name": "outline"
+      },
+      "value": "description"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "4",
+      "rule-name": "RuleName 4",
+      "rule-action": "change-data-type",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "Testdb",
+        "table-name": "project_detail",
+        "column-name": "title"
+      },
+      "data-type": {
+        "type": "string",
+        "length": "255"
+      }
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "5",
+      "rule-name": "RuleName 5",
+      "rule-action": "add-column",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "Testdb",
+        "table-name": "project_detail"
+      },
+      "value": "is_disabled",
+      "expression": "cast('0' AS int1)",
+      "data-type": {
+        "type": "int1",
+        "precision": 6
+      }
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "6",
+      "rule-name": "RuleName 6",
+      "rule-action": "add-column",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "Testdb",
+        "table-name": "project_detail"
+      },
+      "value": "user_id",
+      "expression": "cast($id AS integer)",
+      "data-type": {
+        "type": "string",
+        "length": 25
+      }
+    }
+  ]
+}

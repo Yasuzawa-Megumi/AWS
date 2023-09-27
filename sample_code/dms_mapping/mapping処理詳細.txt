@@ -1,0 +1,22 @@
+★mapping json概要
+・RuleName 1
+　移行するテーブルを記載
+
+・RuleName 2
+　テーブル名の変更(スキーマ名等の変更も可能)
+
+・RuleName 3
+　列名の変更
+
+・RuleName 4
+　指定したカラム名のデータ型を変更(AWS DMSに対応している型のみ指定できる)
+　MySQLであれば下記参照
+　https://docs.aws.amazon.com/ja_jp/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.DataTypes
+
+・RuleName 5、RuleName 6
+　列の追加を行い、追加した列のデータ型と値をセット
+　stringであれば"length"で長さを指定する必要がある
+　intなど数値型であれば"precision"を指定する(任意)
+　"expression"にはSQLiteの関数であれば使用できる
+　$idは移行するテーブルのid列の値を指定している⇒追加列は移行テーブルのid列の値をstringに変換して作成するという処理を記載している
+
