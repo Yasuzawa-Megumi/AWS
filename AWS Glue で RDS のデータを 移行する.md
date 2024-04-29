@@ -1,6 +1,6 @@
 # AWS Glue でデータベースの移行を行う(RDS⇒Aurora)
 
-<img alt="構成図" src="img//Glue/image-1.png" width="70%">
+<img alt="構成図" src="img//Glue/image-1.png" width="60%">
 
 ---
 
